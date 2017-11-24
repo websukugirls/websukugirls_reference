@@ -1,0 +1,29 @@
+== render 'shared/user_header'
+/ == render 'shared/post_form'
+
+.post-form-box
+  .validation-message
+    - if @post.errors.any?
+      ul
+        - @post.errors.full_messages.each do |err|
+          li = err
+  = form_for @post, url:{action: 'update'} do |f|
+    .post-label
+      = f.label :title
+    = f.text_field :title
+    .post-label
+      = f.label :subtitle
+    .post-form-subtitle
+      = f.text_area :subtitle
+    .post-label
+      = f.label :content
+    .post-form-content.clearfix
+      #editor
+        = f.text_area :content
+      #preview
+    = f.hidden_field :user_id, value: current_user.id
+    .post-label
+      = f.label :tag
+    = f.collection_radio_buttons :tag_id, Tag.all, :id, :name
+    .post-form-submit
+      = f.submit

@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Bitter|Inconsolata|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,900');
+
+@font-face{
+font-family:'HuiFontP109';
+src:url('https://dl.dropboxusercontent.com/s/6snqvg654tirsyv/HuiFontP109.eot');
+src:url('https://dl.dropboxusercontent.com/s/6snqvg654tirsyv/HuiFontP109.eot?#iefix') format('embedded-opentype'),
+url('https://dl.dropboxusercontent.com/s/7pscemjdvt0wyiq/HuiFontP109.woff') format('woff'),
+url('https://dl.dropboxusercontent.com/s/0w9uuopxrns8ehi/HuiFontP109.ttf') format('truetype'),
+url('https://dl.dropboxusercontent.com/s/xnnsbxtz8o6d98i/HuiFontP109.svg#HuiFontP109') format('svg');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Exo 2', "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  // font-family: 'Inconsolata', monospace;
+  -webkit-font-smoothing: antialiased;
+  font-family:'HuiFontP109';
+}
+
+ a:link,
+ a:visited {
+  text-decoration: none;
+  color: #000;
+ }
+
+ li {
+  list-style: none;
+ }
+
+ $colorPink: #EB345F;
+ $colorBlue: #384877;
+ $colorSoftGreen: #84BAB3;
+
+@mixin width80 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@mixin toppage-border($color:  #E4EFF1) {
+  border: 10px solid $color;
+  width: 200px;
+  height: 150px;
+}
+
+@mixin inputspace {
+  padding: 5px 10px;
+}
+
+@mixin button {
+  border: 1px solid $colorBlue;
+  @include inputspace;
+}
+
+// border: 1px solid #000;
+
+// @mixin borderbottom($color: #dcdcdc) {
+//   border-bottom: 1px solid $color;
+// }
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.wrap {
+  @include width80;
+  margin-top: 60px;
+}
+
+.button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  a {
+    border: 1px solid $colorBlue;
+    border-radius: 3px;
+    @include inputspace;
+    &:hover {
+      color: $colorPink;
+    }
+  }
+}
+
+.topmenu-list-box {
+  margin-top: 80px;
+  border: 1px solid transparent;
+  height: 600px;
+}
+
+.topmenu-list-left {
+  float: left;
+  margin-left: 80px;
+  h1 {
+    font-size: 56px;
+    font-weight: 900;
+  }
+}
+
+[class^="menu-list"] {
+  @include toppage-border;
+  position: relative;
+  text-align: left;
+  font-size: 16px;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+  h1 {
+    position: absolute;
+  }
+  &:hover {
+    border: 10px solid $colorPink;
+  }
+  * {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  figcaption {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    z-index: 1;
+    opacity: 0;
+    padding: 20px 30px;
+    img {
+      width: 100%;
+    }
+  }
+  &:hover h1,
+  &.hover h1 {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  &:hover figcaption {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+}
+
+.menu-list1 {
+  h1{
+    top:24px;
+    left: 120px;
+  }
+}
+.menu-list2 {
+  margin: 72px 0 72px 100px;
+  h1{
+    top: 24px;
+    right: 150px;
+  }
+}
+.menu-list3 {
+  margin-left: 30px;
+  h1{
+    top: 24px;
+    left: 120px;
+  }
+}
+
+.topmenu-list-right {
+  float: right;
+  margin-right: 80px;
+  h1 {
+    font-size: 56px;
+  }
+}
+
+.menu-list4 {
+  margin-left: 50px;
+  h1{
+    top: 24px;
+    right: 150px;
+  }
+}
+.menu-list5 {
+  margin: 72px 100px 72px 0;
+  h1{
+    top: 24px;
+    left: 120px;
+  }
+}
+.menu-list6 {
+  margin-left: 100px;
+  h1{
+    top: 24px;
+    right: 150px;
+  }
+}
+
+.top-title {
+  margin: 125px auto;
+  width: 500px;
+  height: 350px;
+  background-color: $colorPink;
+  h1 {
+    text-align: center;
+    font-size: 60px;
+    padding-top: 80px;
+    color: #E4EFF1;
+  }
+}
+
+.userlogin-header {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  line-height: 48px;
+  p {
+    margin-right: 100px;
+  }
+  ul {
+    display: flex;
+    li {
+      margin-right: 30px;
+    }
+  }
+}
+
+.header-box {
+  height: 48px;
+  width: 100%;
+  background-color: #CC6165;
+  nav {
+    @include width80;
+    ul {
+      display: flex;
+      line-height: 40px;
+      li {
+        margin-right: 30px;
+        a {
+          color: #545371;
+        }
+      }
+    }
+  }
+}
+
+.footer-box {
+  width: 90%;
+  margin: 0 auto;
+  border-top: 1px solid #384877;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  p {
+    text-align: center;
+    padding-top: 20px;
+    color: $colorPink;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

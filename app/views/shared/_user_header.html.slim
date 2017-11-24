@@ -1,0 +1,13 @@
+- if user_signed_in?
+  .userlogin-header
+    p
+      | Loged in as　
+      = @user.username
+    ul
+      li
+        = link_to 'HOME', root_path
+      li
+        = link_to '記事投稿', new_post_path
+      li
+        = link_to 'user page', userpage_path
+    = link_to 'log out', destroy_user_session_path, method: :delete

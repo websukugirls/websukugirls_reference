@@ -1,0 +1,18 @@
+== render 'shared/user_header'
+== render 'shared/header'
+.post-detail-page
+  .post-detail-title
+    h1 = @post.title
+  .post-detail-content
+    .username-postdate
+      p
+        = link_to userpage_path(@user)
+          | written by &nbsp;
+          = @post.user.username
+      p
+        | created：
+        = @post.created_at.strftime('%Y/%m/%d')
+        span
+          | updated：
+          = @post.updated_at.strftime('%Y/%m/%d')
+    = markdown(@post.content)

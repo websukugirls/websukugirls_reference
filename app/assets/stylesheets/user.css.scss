@@ -1,0 +1,109 @@
+@mixin width80 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@mixin inputspace {
+  padding: 5px 10px;
+}
+
+@mixin button {
+  border: 1px solid $colorBlue;
+  @include inputspace;
+}
+
+ $colorPink: #EB345F;
+ $colorBlue: #384877;
+
+.userpage-box {
+  h1 {
+    margin-bottom: 30px;
+  }
+  .userprofile-box {
+    @include width80;
+    h3 {
+      padding-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      tr {
+        td {
+          border: 1px solid $colorPink;
+          padding: 5px 10px;
+          &:first-child {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.userpost-box {
+  @include width80;
+  margin-top: 80px;
+  h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+}
+
+.userpost-list {
+  margin: 30px 0;
+  hr {
+    margin: 30px 0;
+  }
+}
+
+.post-date {
+  font-size: 12px;
+  color: #84BAB3;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-end;
+  p {
+    margin-right: 20px;
+    text-align: right;
+  }
+}
+
+h6 {
+  font-weight: bold;
+  width: 100%;
+  padding: 1em;
+  background: #efefef;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  overflow: auto;
+  margin: 10px 0 0 0;
+  font-size: 12px;
+}
+
+pre {
+  padding: 1rem;
+  margin-bottom: 60px;
+  overflow: auto;
+}
+
+.user-link {
+  .link-button {
+    display: inline-block;
+    margin-right: 20px;
+    a {
+      @include button;
+      &:hover {
+        background-color: $colorPink;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

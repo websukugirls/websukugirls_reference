@@ -1,0 +1,40 @@
+== render 'shared/user_header'
+.topmenu-list-box
+  section.topmenu-list-left
+    = link_to rails_path do
+      figure.menu-list1
+        h1 Rails
+        figcaption
+          = image_tag('/images/rails.png', size: '80x100')
+    = link_to js_path do
+      figure.menu-list2
+        h1 JS
+        figcaption.hover
+          = image_tag('/images/js.png', size: '80x100')
+    = link_to html_path do
+      figure.menu-list3
+        h1 html
+        figcaption
+          = image_tag('/images/html.png', size: '80x100')
+  section.topmenu-list-right
+    = link_to css_path do
+      figure.menu-list4
+        h1 css
+        figcaption
+          = image_tag('/images/css3.jpg', size: '80x100')
+    = link_to aws_path do
+      figure.menu-list5
+        h1 AWS
+        figcaption
+          = image_tag('/images/aws.png', size: '80x100')
+    = link_to git_path do
+      figure.menu-list6
+        h1 Git
+        figcaption.hover
+          = image_tag('/images/git.jpg', size: '80x100')
+  .top-title
+    h1
+      | websuku
+      br
+        | Girls
+
